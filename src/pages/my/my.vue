@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useMemberStore } from '@/stores'
-import '@/utils/http'
+import http from '@/utils/http'
 
 const memberStore = useMemberStore()
 // 请求接口
 const getData = async () => {
-  const res = await uni.request({
+  const res = await http({
     url: '/home/banner',
     method: 'GET',
     header: {},
@@ -19,7 +19,7 @@ const getData = async () => {
     <button
       @tap="
         memberStore.setProfile({
-          nickname: '黑马先锋123',
+          nickname: '黑马先锋12345',
           token: 'token123456',
         })
       "
